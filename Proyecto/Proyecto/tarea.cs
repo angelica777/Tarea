@@ -8,11 +8,13 @@ namespace Proyecto
 {
     public class tarea
     {
-
+        public string idTarea { get; set; }
         public string nombreTarea { get; set; }
         public string descripcion { get; set; }
         public string prioridad { get; set; }
 
         public string estado { get; set; }
+
+        public string responsable { get; set; }
     }
 }

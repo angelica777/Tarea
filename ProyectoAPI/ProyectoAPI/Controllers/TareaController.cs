@@ -29,10 +29,12 @@ namespace ProyectoAPI.Controllers
             {
                 lista.Add(new Tarea()
                 {
+                    idTarea = idatos["idTarea"].ToString(),
                     nombreTarea = idatos["nombreTarea"].ToString(),
                     descripcion = idatos["descripcion"].ToString(),
                     prioridad = idatos["prioridad"].ToString(),
-                    estado = idatos["estado"].ToString()
+                    estado = idatos["estado"].ToString(),
+                    responsable= idatos["responsable"].ToString()
                 });
             }
             IEnumerable<Tarea> tareas = lista;
@@ -82,7 +84,17 @@ namespace ProyectoAPI.Controllers
                 ParameterName = "estado",
                 Value = value.estado 
             });
+
+            ListaParametros.Add(new MySqlParameter()
+            {
+                Direction = ParameterDirection.Input,
+                ParameterName = "responsable",
+                Value = value.responsable
+            });
+
             con.EjecutarOperacion("registrar_tarea",ListaParametros, CommandType.StoredProcedure);
+
+         
         }
 
         // PUT: api/Tarea/5

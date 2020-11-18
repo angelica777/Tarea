@@ -11,7 +11,12 @@ namespace ProyectoAPI.accessdata
     {
         // private MySqlConnection conexion1 = new MySqlConnection("");
         //private SqlConnection myConnection = new SqlConnection(cadenaConexion);
-        string cadenaConexion = "Server=localhost;Database=bd_tarea; Uid=root;Pwd=root;";
+        string cadenaConexion = "Server=localhost;Database=bd_tarea; Uid=root;Pwd=root;"; //CAMBIAR
+        /// 
+        /// </summary>
+        /// <param name="sentencia"></param>
+        /// <param name="TipoComando"></param>
+        /// <returns></returns>
 
         public bool EjecutarOperacion(string sentencia, CommandType TipoComando)
         {
